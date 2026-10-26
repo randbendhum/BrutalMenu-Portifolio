@@ -1,0 +1,32 @@
+services:
+  nginx:
+    # Internal only; Caddy handles public ports 80 & 443 with automatic HTTPS
+    ports: !reset []
+
+  mysql:
+    # Bind MySQL to localhost only in production for security
+    ports: !reset
+      - "127.0.0.1:3306:3306"
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: portfolio_caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      DOMAIN: ${DOMAIN:-localhost}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - nginx
+    networks:
+      - portfolio_net
+
+volumes:
+  caddy_data:
+  caddy_config:

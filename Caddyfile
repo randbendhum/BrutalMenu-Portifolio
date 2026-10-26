@@ -1,0 +1,14 @@
+{$DOMAIN:localhost} {
+    encode zstd gzip
+    reverse_proxy nginx:80 {
+        header_up Host {host}
+        header_up X-Real-IP {remote_host}
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto {scheme}
+    }
+}
+
+www.{$DOMAIN:localhost} {
+    redir https://{$DOMAIN:localhost}{uri} permanent
+}
+

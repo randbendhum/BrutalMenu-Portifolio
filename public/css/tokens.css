@@ -1,0 +1,50 @@
+/* ==========================================================================
+   NEOBRUTALIST DESIGN TOKENS
+   Palette: Cream (#FFF4E0) + Yellow (#FFD23F) + Pink (#FF6B9D) + Cyan (#4CC9F0)
+   ========================================================================== */
+
+:root {
+    /* Core Surface & Ink Colors */
+    --bg-cream: #FFF4E0;
+    --bg-paper: #FFFFFF;
+    --ink: #000000;
+    --ink-soft: #1F1F1F;
+    --ink-muted: #4A4A4A;
+
+    /* Neobrutalist Accent Palette */
+    --accent-yellow: #FFD23F;
+    --accent-pink: #FF6B9D;
+    --accent-cyan: #4CC9F0;
+    --accent-mint: #3BCEAC;
+    --accent-orange: #FF9F1C;
+    --accent-danger: #FF4D4D;
+
+    /* Borders */
+    --border-w: 3px;
+    --border-w-lg: 4px;
+    --border: var(--border-w) solid var(--ink);
+    --border-lg: var(--border-w-lg) solid var(--ink);
+
+    /* Hard Offset Shadows (Zero Blur) */
+    --shadow-xs: 3px 3px 0px var(--ink);
+    --shadow-sm: 4px 4px 0px var(--ink);
+    --shadow-md: 6px 6px 0px var(--ink);
+    --shadow-lg: 9px 9px 0px var(--ink);
+    --shadow-xl: 12px 12px 0px var(--ink);
+
+    /* Typography */
+    --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    --font-sans: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    /* Layout & Spacing */
+    --container-max: 1240px;
+    --gap-sm: 0.75rem;
+    --gap-md: 1.25rem;
+    --gap-lg: 1.75rem;
+    --gap-xl: 2.5rem;
+
+    /* Transitions */
+    --ease-brutal: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+

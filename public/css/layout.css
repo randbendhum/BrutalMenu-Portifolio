@@ -1,0 +1,334 @@
+/* ==========================================================================
+   NEOBRUTALIST CSS GRID & FLEXBOX PAGE LAYOUTS
+   ========================================================================== */
+
+.page-section {
+    padding-block: 2.25rem 1rem;
+}
+
+.page-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.25rem;
+    padding: 1.75rem;
+    margin-bottom: 2rem;
+    border: var(--border-lg);
+    box-shadow: var(--shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   1. Home Main Menu — 12-Column Bento CSS Grid
+   -------------------------------------------------------------------------- */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-rows: minmax(210px, auto);
+    gap: 1.5rem;
+}
+
+.tile-hero {
+    grid-column: span 8;
+    padding: 2.2rem;
+}
+
+.tile-avatar {
+    grid-column: span 4;
+}
+
+.tile-about {
+    grid-column: span 4;
+}
+
+.tile-projects {
+    grid-column: span 8;
+}
+
+.tile-contact {
+    grid-column: span 7;
+}
+
+.tile-socials {
+    grid-column: span 5;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 1.65rem;
+}
+
+/* Featured project mini-rows inside Main Menu tile 02 */
+.featured-mini-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 0.9rem;
+    margin-top: 1.15rem;
+}
+
+.featured-mini-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.65rem;
+    padding: 1rem;
+    background-color: var(--bg-paper);
+    color: var(--ink);
+    border: var(--border);
+    box-shadow: var(--shadow-xs);
+    transition: transform 0.14s var(--ease-brutal), box-shadow 0.14s var(--ease-brutal);
+}
+
+.featured-mini-item:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-sm);
+    background-color: var(--bg-cream);
+}
+
+.shortcut-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.45rem;
+    margin-top: 0.5rem;
+}
+
+.kbd-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.2rem 0.5rem;
+    background-color: var(--bg-paper);
+    border: 2px solid var(--ink);
+    box-shadow: 2px 2px 0 var(--ink);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   2. Projects Index & Project Detail Grids
+   -------------------------------------------------------------------------- */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.75rem;
+    background-color: var(--bg-paper);
+    border: var(--border);
+    box-shadow: var(--shadow-sm);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.65rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: var(--border-lg);
+    box-shadow: var(--shadow-md);
+    background-color: var(--bg-paper);
+    transition: transform 0.16s var(--ease-brutal), box-shadow 0.16s var(--ease-brutal);
+}
+
+.project-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.project-thumb {
+    height: 190px;
+    border-bottom: var(--border-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.15rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-thumb img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    gap: 1.25rem;
+    padding: 1.5rem;
+}
+
+.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    padding-top: 1rem;
+    border-top: 2px dashed var(--ink);
+}
+
+.project-detail-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.75rem;
+    align-items: start;
+}
+
+.prose-brutal p {
+    margin-bottom: 1.15rem;
+    font-size: 1.06rem;
+    line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   3. About Page Layout (CSS Grid)
+   -------------------------------------------------------------------------- */
+.about-grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 1.5rem;
+    margin-bottom: 1.75rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.75rem;
+}
+
+.skill-check-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+.skill-check-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0.75rem;
+    background-color: var(--bg-paper);
+    border: 2px solid var(--ink);
+    box-shadow: 2px 2px 0 var(--ink);
+    font-family: var(--font-mono);
+    font-size: 0.83rem;
+    font-weight: 600;
+}
+
+.timeline-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. Contact Page Layout
+   -------------------------------------------------------------------------- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 1.75rem;
+    align-items: start;
+}
+
+/* --------------------------------------------------------------------------
+   5. Admin Dashboard Layout
+   -------------------------------------------------------------------------- */
+.admin-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.admin-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.admin-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.15rem 1.35rem;
+    background-color: var(--bg-paper);
+    border: var(--border);
+    box-shadow: var(--shadow-sm);
+}
+
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. Responsive Breakpoints (Tablet & Mobile)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .tile-hero     { grid-column: span 12; }
+    .tile-avatar   { grid-column: span 6; }
+    .tile-about    { grid-column: span 6; }
+    .tile-projects { grid-column: span 12; }
+    .tile-contact  { grid-column: span 12; }
+    .tile-socials  { grid-column: span 12; }
+
+    .about-grid,
+    .skills-grid,
+    .project-detail-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .tile-hero,
+    .tile-avatar,
+    .tile-about,
+    .tile-projects,
+    .tile-contact,
+    .tile-socials {
+        grid-column: span 1;
+        padding: 1.35rem;
+    }
+
+    .stats-grid,
+    .form-grid-2,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header {
+        padding: 1.35rem;
+    }
+}
+

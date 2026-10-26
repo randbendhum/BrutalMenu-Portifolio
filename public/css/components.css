@@ -1,0 +1,533 @@
+/* ==========================================================================
+   NEOBRUTALIST COMPONENTS (Flexbox & Interactive Mechanics)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Sticky Top Navigation Bar
+   -------------------------------------------------------------------------- */
+.brutal-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--bg-cream);
+    border-bottom: var(--border-lg);
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 76px;
+}
+
+.nav-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.5rem 0.95rem;
+    background-color: var(--accent-yellow);
+    border: var(--border);
+    box-shadow: var(--shadow-sm);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    transition: transform 0.14s var(--ease-brutal), box-shadow 0.14s var(--ease-brutal);
+}
+
+.nav-brand:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-brand:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--ink);
+}
+
+.nav-brand-dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-pink);
+    border: 2px solid var(--ink);
+    display: inline-block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.95rem;
+    background-color: var(--bg-paper);
+    border: var(--border);
+    box-shadow: var(--shadow-xs);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: transform 0.14s var(--ease-brutal), box-shadow 0.14s var(--ease-brutal), background-color 0.14s ease;
+}
+
+.nav-link:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-md);
+    background-color: var(--accent-yellow);
+}
+
+.nav-link:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--ink);
+}
+
+.nav-link.is-active {
+    background-color: var(--accent-pink);
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-link--cta {
+    background-color: var(--accent-cyan);
+}
+
+.nav-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 0.8rem;
+    background-color: var(--accent-yellow);
+    border: var(--border);
+    box-shadow: var(--shadow-xs);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: inline-flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem 1.25rem 1.25rem;
+        background-color: var(--bg-cream);
+        border-bottom: var(--border-lg);
+        box-shadow: 0 8px 0 var(--ink);
+    }
+
+    .nav-links.is-open {
+        display: flex;
+    }
+
+    .nav-link {
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. Neobrutalist Buttons
+   -------------------------------------------------------------------------- */
+.brutal-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.78rem 1.35rem;
+    border: var(--border);
+    box-shadow: var(--shadow-sm);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    background-color: var(--accent-yellow);
+    color: var(--ink);
+    transition: transform 0.14s var(--ease-brutal), box-shadow 0.14s var(--ease-brutal), background-color 0.14s ease;
+}
+
+.brutal-btn:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: var(--shadow-md);
+}
+
+.brutal-btn:active {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 var(--ink);
+}
+
+.brutal-btn--pink   { background-color: var(--accent-pink); }
+.brutal-btn--cyan   { background-color: var(--accent-cyan); }
+.brutal-btn--mint   { background-color: var(--accent-mint); }
+.brutal-btn--white  { background-color: var(--bg-paper); }
+.brutal-btn--danger { background-color: var(--accent-danger); color: var(--bg-paper); }
+.brutal-btn--black  { background-color: var(--ink); color: var(--bg-paper); }
+
+.brutal-btn--sm {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.78rem;
+    box-shadow: var(--shadow-xs);
+}
+
+.brutal-btn--lg {
+    padding: 1rem 1.75rem;
+    font-size: 1rem;
+    box-shadow: var(--shadow-md);
+}
+
+.brutal-btn--block {
+    width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   3. Neobrutalist Cards & Bento Tiles
+   -------------------------------------------------------------------------- */
+.brutal-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.65rem;
+    border: var(--border-lg);
+    box-shadow: var(--shadow-md);
+    background-color: var(--bg-paper);
+    transition: transform 0.16s var(--ease-brutal), box-shadow 0.16s var(--ease-brutal);
+}
+
+.brutal-card--interactive {
+    cursor: pointer;
+}
+
+.brutal-card--interactive:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.brutal-card--interactive:active {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0 var(--ink);
+}
+
+.tile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1.1rem;
+}
+
+.tile-index {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.65rem;
+    background-color: var(--bg-paper);
+    color: var(--ink);
+    border: 2.5px solid var(--ink);
+    box-shadow: 2px 2px 0 var(--ink);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.tile-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background-color: var(--bg-paper);
+    color: var(--ink);
+    border: 2.5px solid var(--ink);
+    box-shadow: 2px 2px 0 var(--ink);
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: transform 0.16s var(--ease-brutal), background-color 0.16s ease;
+}
+
+.brutal-card--interactive:hover .tile-arrow {
+    transform: translate(2px, -2px);
+    background-color: var(--accent-yellow);
+}
+
+/* --------------------------------------------------------------------------
+   4. Tags, Chips & Status Pill
+   -------------------------------------------------------------------------- */
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.brutal-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.65rem;
+    background-color: var(--bg-paper);
+    color: var(--ink);
+    border: 2px solid var(--ink);
+    box-shadow: 2px 2px 0 var(--ink);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+a.brutal-tag:hover,
+.brutal-tag.is-active {
+    background-color: var(--accent-yellow);
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 var(--ink);
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.35rem 0.8rem;
+    background-color: var(--bg-paper);
+    color: var(--ink);
+    border: 2.5px solid var(--ink);
+    box-shadow: var(--shadow-xs);
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: fit-content;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-mint);
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    animation: pulse-brutal 1.8s infinite ease-in-out;
+}
+
+@keyframes pulse-brutal {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.25); background-color: var(--accent-yellow); }
+}
+
+/* --------------------------------------------------------------------------
+   5. Scrolling Marquee Ticker
+   -------------------------------------------------------------------------- */
+.marquee-bar {
+    overflow: hidden;
+    background-color: var(--ink);
+    color: var(--bg-paper);
+    border-block: var(--border-lg);
+    padding-block: 0.7rem;
+    user-select: none;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 2rem;
+    animation: marquee-scroll 26s linear infinite;
+}
+
+.marquee-bar:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+.marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.marquee-sep {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-yellow);
+    border: 1.5px solid var(--bg-paper);
+    transform: rotate(45deg);
+}
+
+@keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+/* --------------------------------------------------------------------------
+   6. Geometric Neobrutalist Avatar
+   -------------------------------------------------------------------------- */
+.avatar-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+    height: 100%;
+}
+
+.avatar-box {
+    width: 132px;
+    height: 132px;
+    background-color: var(--bg-paper);
+    border: var(--border-lg);
+    box-shadow: var(--shadow-md);
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-monogram {
+    font-family: var(--font-display);
+    font-size: 3.1rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--ink);
+    background: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-pink) 50%, var(--accent-cyan) 50%, var(--accent-cyan) 100%);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   7. Neobrutalist Forms & Validation
+   -------------------------------------------------------------------------- */
+.brutal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.brutal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.brutal-label {
+    font-family: var(--font-mono);
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.brutal-input,
+.brutal-textarea,
+.brutal-select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background-color: var(--bg-paper);
+    color: var(--ink);
+    border: var(--border);
+    box-shadow: var(--shadow-xs);
+    font-size: 1rem;
+    transition: transform 0.12s var(--ease-brutal), box-shadow 0.12s var(--ease-brutal), background-color 0.12s ease;
+}
+
+.brutal-input:focus,
+.brutal-textarea:focus,
+.brutal-select:focus {
+    outline: none;
+    background-color: #FFFDF7;
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-md);
+}
+
+.brutal-input.is-invalid,
+.brutal-textarea.is-invalid {
+    border-color: var(--accent-danger);
+    background-color: #FFF0F0;
+}
+
+.brutal-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.field-error {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    background-color: var(--accent-danger);
+    color: var(--bg-paper);
+    border: 2px solid var(--ink);
+    box-shadow: 2px 2px 0 var(--ink);
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    font-weight: 700;
+    width: fit-content;
+}
+
+/* --------------------------------------------------------------------------
+   8. Flash Toast Banner
+   -------------------------------------------------------------------------- */
+.brutal-toast {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.35rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--accent-mint);
+    color: var(--ink);
+    border: var(--border-lg);
+    box-shadow: var(--shadow-md);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. Footer
+   -------------------------------------------------------------------------- */
+.brutal-footer {
+    margin-top: 4rem;
+    background-color: var(--bg-paper);
+    border-top: var(--border-lg);
+    padding-block: 2rem;
+}
+
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+}
+
+.footer-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+}
+
