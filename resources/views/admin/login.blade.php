@@ -24,7 +24,7 @@
                         type="text"
                         id="username"
                         name="username"
-                        value="{{ old('username', 'admin') }}"
+                        value="{{ old('username') }}"
                         class="brutal-input @error('username') is-invalid @enderror"
                         required
                         autofocus
