@@ -22,6 +22,21 @@ class ProjectSeeder extends Seeder
 
         $projects = [
             [
+                'title' => 'GameSense AI // Real-Time Tactical Analysis Panel',
+                'slug' => 'gamesense-ai-tactical-panel',
+                'summary' => 'Real-time AI tactical analysis & gaming command panel with SHA-256 sub-10ms prompt caching, async queue workers, and pure CSS3 Grid Neo-Brutalist UI.',
+                'description' => "GameSense AI is a high-contrast Neo-Brutalist / Hardcore Gaming UI web application built with PHP 8.3, Laravel 11, MySQL 8.0, and pure structured CSS3 Grid, engineered to run with an ultra-low memory footprint on Oracle Cloud infrastructure.\n\nIt integrates the Gemini AI API via Laravel's HTTP Client with automatic retry and structured JSON output, backed by a deterministic tactical fallback engine for zero-downtime resilience.\n\nTo achieve sub-10ms response times and eliminate redundant API calls, GameSense AI normalizes incoming game telemetry into a deterministic SHA-256 hash (CHAR(64) UNIQUE index in MySQL). Cache hits return instantaneously while incrementing hit counters, whereas cache misses dispatch asynchronous Laravel Database Queue jobs (HTTP 202 Accepted) with real-time frontend status polling across a relational schema (games, categories, prompts_history, and tactics_logs).",
+                'tags' => ['PHP 8.3', 'Laravel 11', 'MySQL 8', 'Gemini AI API', 'CSS3 Grid', 'Queues & Caching'],
+                'color' => 'cyan',
+                'role' => 'Creator & Full-Stack Dev',
+                'year' => '2026',
+                'image_url' => null,
+                'repo_url' => 'https://github.com/randbendhum/GameSense',
+                'live_url' => 'https://gsense.humbertorandon.com',
+                'is_featured' => true,
+                'sort_order' => 1,
+            ],
+            [
                 'title' => 'BrutalMenu // Self-Hosted Portfolio OS',
                 'slug' => 'brutalmenu-portfolio-os',
                 'summary' => 'Neobrutalist portfolio hub & CMS built with PHP 8.3, Laravel 11, MySQL 8, pure CSS Grid/Flexbox, and Docker on Oracle Cloud ARM64.',
@@ -34,7 +49,7 @@ class ProjectSeeder extends Seeder
                 'repo_url' => 'https://github.com/randbendhum/BrutalMenu-Portifolio',
                 'live_url' => 'https://humbertorandon.com',
                 'is_featured' => true,
-                'sort_order' => 1,
+                'sort_order' => 2,
             ],
         ];
 
