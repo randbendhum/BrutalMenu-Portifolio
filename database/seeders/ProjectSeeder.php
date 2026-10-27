@@ -22,6 +22,21 @@ class ProjectSeeder extends Seeder
 
         $projects = [
             [
+                'title' => 'ForgeHub // Mod Manager & XML/JSON Validator',
+                'slug' => 'forgehub-mod-manager-validator',
+                'summary' => 'Neo-Brutalist mod repository & manifest validator with in-memory ZIP/JAR inspection, anti-XXE/Zip-Bomb security, and line/column syntax diagnostics.',
+                'description' => "ForgeHub is a Neo-Brutalist web portal built with PHP 8.3, Laravel 11, MySQL 8.4, Vanilla JS, and pure CSS3 Grid for submitting, validating structural manifests (modDesc.xml, fabric.mod.json, mcmod.info), automatically extracting metadata, and managing versioned packages for Farming Simulator (FS19/FS22/FS25) and Minecraft (Fabric & Forge).\n\nIt features a strict in-memory ZIP/JAR ArchiveInspector and SafeArchive validation pipeline that blocks Path Traversal (../), enforces entry count limits, and prevents Zip Bomb compression attacks before files are persisted.\n\nIts custom XML & JSON Parsing Engine (DOMDocument + DOMXPath with libxml internal error capture and anti-XXE entity blocking) automatically maps game version compatibility, routes packages with syntax errors into an isolated quarantine storage disk, and generates exact line/column diagnostic reports with surrounding code snippets across a full relational Eloquent schema.",
+                'tags' => ['PHP 8.3', 'Laravel 11', 'MySQL 8.4', 'XML/JSON Parser', 'Security & ZIP', 'CSS3 Grid'],
+                'color' => 'pink',
+                'role' => 'Creator & Full-Stack Dev',
+                'year' => '2026',
+                'image_url' => null,
+                'repo_url' => 'https://github.com/randbendhum/ForgeHub',
+                'live_url' => 'https://forgehub.humbertorandon.com',
+                'is_featured' => true,
+                'sort_order' => 1,
+            ],
+            [
                 'title' => 'GameSense AI // Real-Time Tactical Analysis Panel',
                 'slug' => 'gamesense-ai-tactical-panel',
                 'summary' => 'Real-time AI tactical analysis & gaming command panel with SHA-256 sub-10ms prompt caching, async queue workers, and pure CSS3 Grid Neo-Brutalist UI.',
@@ -34,7 +49,7 @@ class ProjectSeeder extends Seeder
                 'repo_url' => 'https://github.com/randbendhum/GameSense',
                 'live_url' => 'https://gsense.humbertorandon.com',
                 'is_featured' => true,
-                'sort_order' => 1,
+                'sort_order' => 2,
             ],
             [
                 'title' => 'BrutalMenu // Self-Hosted Portfolio OS',
@@ -49,7 +64,7 @@ class ProjectSeeder extends Seeder
                 'repo_url' => 'https://github.com/randbendhum/BrutalMenu-Portifolio',
                 'live_url' => 'https://humbertorandon.com',
                 'is_featured' => true,
-                'sort_order' => 2,
+                'sort_order' => 3,
             ],
         ];
 
